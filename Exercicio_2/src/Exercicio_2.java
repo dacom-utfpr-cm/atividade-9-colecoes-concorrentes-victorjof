@@ -26,6 +26,7 @@ public class Exercicio_2 {
     private static List<String> suits = Arrays.asList("diamonds", "hearts", "clubs", "spades");
     private static List<String> numbers = Arrays.asList("A", "2", "3", "4","5","6","7","8","9","10","J","Q","K");
     private static Deck deck;
+
     public static void main(String[] args) {
         deck = new Deck(capacity);
         full_cards = new Phaser(capacity);

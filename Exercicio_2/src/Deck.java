@@ -22,7 +22,7 @@ public class Deck {
                 return 0;
             }
         };
-        cards = new PriorityBlockingQueue<>(num_elements,value_field);
+        cards = new PriorityBlockingQueue<Card>(num_elements,value_field);
         fill_suit_value();
         fill_number_value();
     }
@@ -30,18 +30,19 @@ public class Deck {
     public void produce(Card card){
         card.setValue(number_value.get(card.getNumber()) + suit_value.get(card.getSuit()));
         cards.put(card);
-
     }
 
     public Card consume(){
         try {
-            return cards.take();
+            return cards.take();//get highest card
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         return null;
     }
 
+
+    //Work around for sorting 2 fields, with suit having greater priority than number
     private void fill_suit_value(){
         suit_value.put("spades",100);
         suit_value.put("hearts",200);
