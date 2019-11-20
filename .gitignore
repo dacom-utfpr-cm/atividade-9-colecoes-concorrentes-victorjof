@@ -1,0 +1,9 @@
+out/
+*.iml
+\.idea/
+
+
+headermaker\.py
+
+
+make_files\.py
